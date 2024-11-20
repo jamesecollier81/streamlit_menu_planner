@@ -3,11 +3,16 @@ import json
 from typing import List, Dict, Optional
 from collections import defaultdict
 import random
+import requests
 
 class MealPlanner:
-    def __init__(self, recipes_file: str):
-        with open(recipes_file, 'r') as f:
-            self.recipes = json.load(f)
+    def __init__(self, recipes_url: str):
+        # Read JSON from GitHub raw URL
+        response = requests.get(recipes_url)
+        if response.status_code == 200:
+            self.recipes = response.json()
+        else:
+            raise Exception(f"Failed to load recipes from GitHub. Status code: {response.status_code}")
         
         self.lunch_recipes = [r for r in self.recipes if r['name'].startswith('Lunch - ')]
         self.dinner_recipes = [r for r in self.recipes if not r['name'].startswith('Lunch - ')]
@@ -86,11 +91,16 @@ def main():
     st.set_page_config(page_title="Meal Planner", layout="wide")
     st.title("Weekly Meal Planner")
 
+    # GitHub raw content URL for your recipes.json
+    GITHUB_RECIPES_URL = "https://raw.githubusercontent.com/jamesecollier81/streamlit_menu_planner/refs/heads/main/recipes.json"
+
     # Initialize session state
     if 'planner' not in st.session_state:
-        st.session_state.planner = MealPlanner('recipes.json')
-    if 'show_grocery_list' not in st.session_state:
-        st.session_state.show_grocery_list = False
+        try:
+            st.session_state.planner = MealPlanner(GITHUB_RECIPES_URL)
+        except Exception as e:
+            st.error(f"Error loading recipes: {str(e)}")
+            return
 
     # Sidebar for controls
     with st.sidebar:
