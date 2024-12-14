@@ -3,23 +3,25 @@ import json
 from typing import List, Dict, Optional
 from collections import defaultdict
 import random
-import requests
+
+# Initialize session state variables if they don't exist
+if 'selected_lunch' not in st.session_state:
+    st.session_state.selected_lunch = None
+if 'selected_dinners' not in st.session_state:
+    st.session_state.selected_dinners = []
+if 'show_grocery_list' not in st.session_state:
+    st.session_state.show_grocery_list = False
+if 'locked_indices' not in st.session_state:
+    st.session_state.locked_indices = []
 
 class MealPlanner:
-    def __init__(self, recipes_url: str):
-        # Read JSON from GitHub raw URL
-        response = requests.get(recipes_url)
-        if response.status_code == 200:
-            self.recipes = response.json()
-        else:
-            raise Exception(f"Failed to load recipes from GitHub. Status code: {response.status_code}")
+    def __init__(self, recipes_file: str):
+        with open(recipes_file, 'r') as f:
+            self.recipes = json.load(f)
         
         self.lunch_recipes = [r for r in self.recipes if r['name'].startswith('Lunch - ')]
         self.dinner_recipes = [r for r in self.recipes if not r['name'].startswith('Lunch - ')]
-        self.selected_lunch = None
-        self.selected_dinners = []
-        
-    # ... [keeping the existing methods unchanged] ...
+    
     def get_categories(self, meal_type: str = 'dinner') -> List[str]:
         recipes = self.lunch_recipes if meal_type == 'lunch' else self.dinner_recipes
         return sorted(set(r['category'] for r in recipes))
@@ -29,10 +31,12 @@ class MealPlanner:
         if category:
             available = [r for r in available if r['category'] == category]
             if not available:
-                raise ValueError(f"No lunch recipes found for category: {category}")
-            
-        self.selected_lunch = random.choice(available)
-        return self.selected_lunch
+                st.error(f"No lunch recipes found for category: {category}")
+                return None
+        
+        selected_lunch = random.choice(available)
+        st.session_state.selected_lunch = selected_lunch
+        return selected_lunch
     
     def generate_dinners(self, category_limits: Dict[str, int], locked_indices: List[int] = None) -> List[Dict]:
         if locked_indices is None:
@@ -41,16 +45,11 @@ class MealPlanner:
         new_dinners = [None] * 5
         remaining_slots = 5 - len(locked_indices)
         
-        # Validate total requested meals matches available slots
-        total_requested = sum(category_limits.values())
-        if total_requested != remaining_slots:
-            raise ValueError(f"Total category counts must equal {remaining_slots} (requested: {total_requested})")
-            
         # Keep locked meals
         for idx in locked_indices:
-            if 0 <= idx < len(self.selected_dinners) and self.selected_dinners:
-                new_dinners[idx] = self.selected_dinners[idx]
-                cat = self.selected_dinners[idx]['category']
+            if 0 <= idx < len(st.session_state.selected_dinners):
+                new_dinners[idx] = st.session_state.selected_dinners[idx]
+                cat = st.session_state.selected_dinners[idx]['category']
                 if cat in category_limits:
                     category_limits[cat] -= 1
         
@@ -65,20 +64,20 @@ class MealPlanner:
                 if available:
                     new_dinners[idx] = random.choice(available)
                     category_limits[category] -= 1
-                    
-        self.selected_dinners = new_dinners
+        
+        st.session_state.selected_dinners = new_dinners
         return new_dinners
 
     def generate_grocery_list(self) -> Dict[str, tuple]:
         grocery_list = defaultdict(lambda: [0, ""])
         
-        if self.selected_lunch:
-            for ingredient, amount in self.selected_lunch['ingredients'].items():
-                unit = self.selected_lunch['units'].get(ingredient, "")
+        if st.session_state.selected_lunch:
+            for ingredient, amount in st.session_state.selected_lunch['ingredients'].items():
+                unit = st.session_state.selected_lunch['units'].get(ingredient, "")
                 grocery_list[ingredient][0] += amount
                 grocery_list[ingredient][1] = unit
 
-        for dinner in self.selected_dinners:
+        for dinner in st.session_state.selected_dinners:
             if dinner:
                 for ingredient, amount in dinner['ingredients'].items():
                     unit = dinner['units'].get(ingredient, "")
@@ -88,114 +87,88 @@ class MealPlanner:
         return {k: tuple(v) for k, v in sorted(grocery_list.items())}
 
 def main():
-    st.set_page_config(page_title="Meal Planner", layout="wide")
-    st.title("Weekly Meal Planner")
-
-    # GitHub raw content URL for your recipes.json
-    GITHUB_RECIPES_URL = "https://raw.githubusercontent.com/jamesecollier81/streamlit_menu_planner/refs/heads/main/recipes.json"
-
-    # Initialize session state
-    if 'planner' not in st.session_state:
-        try:
-            st.session_state.planner = MealPlanner(GITHUB_RECIPES_URL)
-        except Exception as e:
-            st.error(f"Error loading recipes: {str(e)}")
-            return
-
-    # Sidebar for controls
-    with st.sidebar:
-        st.header("Controls")
-        
-        # Lunch Section
-        st.subheader("Lunch Generator")
-        use_lunch_category = st.checkbox("Use specific lunch category")
-        if use_lunch_category:
-            lunch_categories = st.session_state.planner.get_categories('lunch')
-            selected_lunch_category = st.selectbox("Select lunch category", lunch_categories)
-            if st.button("Generate Lunch"):
-                st.session_state.planner.generate_lunch(selected_lunch_category)
-        else:
-            if st.button("Generate Random Lunch"):
-                st.session_state.planner.generate_lunch()
-
-        # Dinner Section
-        st.subheader("Dinner Generator")
-        
-        # Display current dinners and lock controls
-        if st.session_state.planner.selected_dinners:
-            st.write("Lock dinners to keep:")
-            locked_dinners = []
-            for i, dinner in enumerate(st.session_state.planner.selected_dinners):
-                if dinner:
-                    if st.checkbox(f"Keep dinner #{i+1}", key=f"lock_{i}"):
-                        locked_dinners.append(i)
-
-        # Category selection
-        st.write("Select dinner categories:")
-        dinner_categories = st.session_state.planner.get_categories('dinner')
-        remaining_slots = 5 - len(locked_dinners) if 'locked_dinners' in locals() else 5
-        
-        category_counts = {}
-        total_selected = 0
-        
-        for category in dinner_categories:
-            col1, col2 = st.columns([3, 1])
-            with col1:
-                st.write(category)
-            with col2:
-                count = st.number_input(
-                    f"Count for {category}",
-                    min_value=0,
-                    max_value=remaining_slots - total_selected,
-                    value=0,
-                    key=f"count_{category}",
-                    label_visibility="collapsed"
-                )
-                if count > 0:
-                    category_counts[category] = count
-                    total_selected += count
-
-        st.write(f"Selected: {total_selected}/{remaining_slots} slots")
-        
-        if st.button("Generate Dinners") and total_selected == remaining_slots:
-            st.session_state.planner.generate_dinners(
-                category_counts,
-                locked_dinners if 'locked_dinners' in locals() else None
-            )
-
-        if st.button("Show/Hide Grocery List"):
-            st.session_state.show_grocery_list = not st.session_state.show_grocery_list
-
-    # Main content area
-    col1, col2 = st.columns([2, 1])
+    st.title("Meal Planner")
     
+    planner = MealPlanner('recipes.json')
+    
+    # Lunch Section
+    st.header("Lunch Generator")
+    use_category = st.checkbox("Use category for lunch generation")
+    
+    if use_category:
+        lunch_categories = planner.get_categories('lunch')
+        selected_lunch_category = st.selectbox(
+            "Select lunch category",
+            lunch_categories
+        )
+        if st.button("Generate Lunch with Category"):
+            planner.generate_lunch(selected_lunch_category)
+    else:
+        if st.button("Generate Random Lunch"):
+            planner.generate_lunch()
+    
+    # Display selected lunch
+    if st.session_state.selected_lunch:
+        st.write("Selected Lunch:", st.session_state.selected_lunch['name'])
+        st.write("Category:", st.session_state.selected_lunch['category'])
+    
+    # Dinner Section
+    st.header("Dinner Generator")
+    
+    # Category selection for dinners
+    st.subheader("Select Dinner Categories")
+    categories = planner.get_categories('dinner')
+    category_counts = {}
+    
+    col1, col2 = st.columns(2)
     with col1:
-        st.header("Meal Plan")
-        
-        # Display Lunch
-        st.subheader("Lunch")
-        if st.session_state.planner.selected_lunch:
-            st.write(
-                f"{st.session_state.planner.selected_lunch['name']} "
-                f"({st.session_state.planner.selected_lunch['category']})"
+        for i, category in enumerate(categories):
+            count = st.number_input(
+                f"{category}",
+                min_value=0,
+                max_value=5,
+                value=0,
+                key=f"category_{i}"
             )
+            if count > 0:
+                category_counts[category] = count
+    
+    # Lock dinners
+    if st.session_state.selected_dinners:
+        st.subheader("Lock Dinners")
+        st.session_state.locked_indices = []
+        for i, dinner in enumerate(st.session_state.selected_dinners):
+            if dinner:
+                if st.checkbox(f"Lock {dinner['name']}", key=f"lock_{i}"):
+                    st.session_state.locked_indices.append(i)
+    
+    # Generate dinners button
+    if st.button("Generate Dinners"):
+        total_selected = sum(category_counts.values())
+        remaining_slots = 5 - len(st.session_state.locked_indices)
+        
+        if total_selected != remaining_slots:
+            st.error(f"Please select exactly {remaining_slots} meals total (selected: {total_selected})")
         else:
-            st.write("No lunch selected")
-
-        # Display Dinners
-        st.subheader("Dinners")
-        for i, dinner in enumerate(st.session_state.planner.selected_dinners, 1):
+            planner.generate_dinners(category_counts, st.session_state.locked_indices)
+    
+    # Display selected dinners
+    if st.session_state.selected_dinners:
+        st.subheader("Selected Dinners")
+        for i, dinner in enumerate(st.session_state.selected_dinners, 1):
             if dinner:
                 st.write(f"{i}. {dinner['name']} ({dinner['category']})")
-            else:
-                st.write(f"{i}. Not generated yet")
-
-    with col2:
-        if st.session_state.show_grocery_list:
-            st.header("Grocery List")
-            grocery_list = st.session_state.planner.generate_grocery_list()
-            for ingredient, (amount, unit) in grocery_list.items():
-                st.write(f"{ingredient}: {amount} {unit}")
+    
+    # Grocery list
+    st.header("Grocery List")
+    if st.button("Generate Grocery List"):
+        st.session_state.show_grocery_list = True
+    
+    if st.session_state.show_grocery_list:
+        grocery_list = planner.generate_grocery_list()
+        st.subheader("Shopping List")
+        for ingredient, (amount, unit) in grocery_list.items():
+            st.write(f"{ingredient}: {amount} {unit}")
 
 if __name__ == "__main__":
     main()
