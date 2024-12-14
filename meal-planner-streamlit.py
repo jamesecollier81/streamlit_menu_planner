@@ -11,8 +11,8 @@ if 'selected_dinners' not in st.session_state:
     st.session_state.selected_dinners = []
 if 'show_grocery_list' not in st.session_state:
     st.session_state.show_grocery_list = False
-if 'locked_indices' not in st.session_state:
-    st.session_state.locked_indices = []
+if 'locked_dinners' not in st.session_state:
+    st.session_state.locked_dinners = {}
 
 class MealPlanner:
     def __init__(self, recipes_file: str):
@@ -38,20 +38,16 @@ class MealPlanner:
         st.session_state.selected_lunch = selected_lunch
         return selected_lunch
     
-    def generate_dinners(self, category_limits: Dict[str, int], locked_indices: List[int] = None) -> List[Dict]:
-        if locked_indices is None:
-            locked_indices = []
-            
+    def generate_dinners(self, category_limits: Dict[str, int]) -> List[Dict]:
         new_dinners = [None] * 5
-        remaining_slots = 5 - len(locked_indices)
         
-        # Keep locked meals
+        # First, keep all locked dinners
+        locked_indices = [i for i in range(5) if i in st.session_state.locked_dinners]
         for idx in locked_indices:
-            if 0 <= idx < len(st.session_state.selected_dinners):
-                new_dinners[idx] = st.session_state.selected_dinners[idx]
-                cat = st.session_state.selected_dinners[idx]['category']
-                if cat in category_limits:
-                    category_limits[cat] -= 1
+            new_dinners[idx] = st.session_state.locked_dinners[idx]
+            cat = new_dinners[idx]['category']
+            if cat in category_limits:
+                category_limits[cat] -= 1
         
         # Fill remaining slots
         empty_indices = [i for i in range(5) if new_dinners[i] is None]
@@ -136,28 +132,39 @@ def main():
     # Lock dinners
     if st.session_state.selected_dinners:
         st.subheader("Lock Dinners")
-        st.session_state.locked_indices = []
+        
+        # Update locked dinners based on checkboxes
         for i, dinner in enumerate(st.session_state.selected_dinners):
             if dinner:
-                if st.checkbox(f"Lock {dinner['name']}", key=f"lock_{i}"):
-                    st.session_state.locked_indices.append(i)
+                key = f"lock_dinner_{i}"
+                is_locked = st.checkbox(
+                    f"Lock {dinner['name']}", 
+                    key=key,
+                    value=(i in st.session_state.locked_dinners)
+                )
+                
+                if is_locked:
+                    st.session_state.locked_dinners[i] = dinner
+                elif i in st.session_state.locked_dinners:
+                    del st.session_state.locked_dinners[i]
     
     # Generate dinners button
     if st.button("Generate Dinners"):
         total_selected = sum(category_counts.values())
-        remaining_slots = 5 - len(st.session_state.locked_indices)
+        remaining_slots = 5 - len(st.session_state.locked_dinners)
         
         if total_selected != remaining_slots:
             st.error(f"Please select exactly {remaining_slots} meals total (selected: {total_selected})")
         else:
-            planner.generate_dinners(category_counts, st.session_state.locked_indices)
+            planner.generate_dinners(category_counts)
     
     # Display selected dinners
     if st.session_state.selected_dinners:
         st.subheader("Selected Dinners")
         for i, dinner in enumerate(st.session_state.selected_dinners, 1):
             if dinner:
-                st.write(f"{i}. {dinner['name']} ({dinner['category']})")
+                locked_status = "(Locked)" if (i-1) in st.session_state.locked_dinners else ""
+                st.write(f"{i}. {dinner['name']} ({dinner['category']}) {locked_status}")
     
     # Grocery list
     st.header("Grocery List")
