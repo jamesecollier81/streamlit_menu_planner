@@ -86,7 +86,6 @@ def main():
     if st.session_state.selected_lunch:
         st.write("Selected Lunch:", st.session_state.selected_lunch['name'])
         st.write("Category:", st.session_state.selected_lunch['category'])
-        st.write("Ingredients:", ", ".join(st.session_state.selected_lunch['ingredients']))
     
     # Dinner Section
     st.header("Dinner Generator")
@@ -145,7 +144,6 @@ def main():
             if dinner:
                 locked_status = "(Locked)" if (i-1) in st.session_state.locked_dinners else ""
                 st.write(f"{i}. {dinner['name']} ({dinner['category']}) {locked_status}")
-                st.write(f"Ingredients: {', '.join(dinner['ingredients'])}")
 
 if __name__ == "__main__":
     main()
