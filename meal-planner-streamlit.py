@@ -13,11 +13,22 @@ if 'locked_dinners' not in st.session_state:
 
 class MealPlanner:
     def __init__(self, recipes_file: str):
-        with open(recipes_file, 'r') as f:
-            self.recipes = json.load(f)
-        
-        self.lunch_recipes = [r for r in self.recipes if r['name'].startswith('Lunch - ')]
-        self.dinner_recipes = [r for r in self.recipes if not r['name'].startswith('Lunch - ')]
+        try:
+            with open(recipes_file, 'r') as f:
+                self.recipes = json.load(f)
+            
+            # Validate recipe data
+            for recipe in self.recipes:
+                if 'name' not in recipe or 'category' not in recipe:
+                    raise ValueError("Recipe missing required fields")
+            
+            self.lunch_recipes = [r for r in self.recipes if r['name'].startswith('Lunch - ')]
+            self.dinner_recipes = [r for r in self.recipes if not r['name'].startswith('Lunch - ')]
+        except (FileNotFoundError, json.JSONDecodeError) as e:
+            st.error(f"Error loading recipes: {str(e)}")
+            self.recipes = []
+            self.lunch_recipes = []
+            self.dinner_recipes = []
     
     def get_categories(self, meal_type: str = 'dinner') -> List[str]:
         recipes = self.lunch_recipes if meal_type == 'lunch' else self.dinner_recipes
