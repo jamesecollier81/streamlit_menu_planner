@@ -1,7 +1,6 @@
 import streamlit as st
 import json
 from typing import List, Dict, Optional
-from collections import defaultdict
 import random
 
 # Initialize session state variables if they don't exist
@@ -9,8 +8,6 @@ if 'selected_lunch' not in st.session_state:
     st.session_state.selected_lunch = None
 if 'selected_dinners' not in st.session_state:
     st.session_state.selected_dinners = []
-if 'show_grocery_list' not in st.session_state:
-    st.session_state.show_grocery_list = False
 if 'locked_dinners' not in st.session_state:
     st.session_state.locked_dinners = {}
 
@@ -64,24 +61,6 @@ class MealPlanner:
         st.session_state.selected_dinners = new_dinners
         return new_dinners
 
-    def generate_grocery_list(self) -> Dict[str, tuple]:
-        grocery_list = defaultdict(lambda: [0, ""])
-        
-        if st.session_state.selected_lunch:
-            for ingredient, amount in st.session_state.selected_lunch['ingredients'].items():
-                unit = st.session_state.selected_lunch['units'].get(ingredient, "")
-                grocery_list[ingredient][0] += amount
-                grocery_list[ingredient][1] = unit
-
-        for dinner in st.session_state.selected_dinners:
-            if dinner:
-                for ingredient, amount in dinner['ingredients'].items():
-                    unit = dinner['units'].get(ingredient, "")
-                    grocery_list[ingredient][0] += amount
-                    grocery_list[ingredient][1] = unit
-
-        return {k: tuple(v) for k, v in sorted(grocery_list.items())}
-
 def main():
     st.title("Meal Planner")
     
@@ -107,6 +86,7 @@ def main():
     if st.session_state.selected_lunch:
         st.write("Selected Lunch:", st.session_state.selected_lunch['name'])
         st.write("Category:", st.session_state.selected_lunch['category'])
+        st.write("Ingredients:", ", ".join(st.session_state.selected_lunch['ingredients']))
     
     # Dinner Section
     st.header("Dinner Generator")
@@ -165,17 +145,7 @@ def main():
             if dinner:
                 locked_status = "(Locked)" if (i-1) in st.session_state.locked_dinners else ""
                 st.write(f"{i}. {dinner['name']} ({dinner['category']}) {locked_status}")
-    
-    # Grocery list
-    st.header("Grocery List")
-    if st.button("Generate Grocery List"):
-        st.session_state.show_grocery_list = True
-    
-    if st.session_state.show_grocery_list:
-        grocery_list = planner.generate_grocery_list()
-        st.subheader("Shopping List")
-        for ingredient, (amount, unit) in grocery_list.items():
-            st.write(f"{ingredient}: {amount} {unit}")
+                st.write(f"Ingredients: {', '.join(dinner['ingredients'])}")
 
 if __name__ == "__main__":
     main()
