@@ -1,581 +1,170 @@
 [
     {
         "name": "Pasta Carbonara",
-        "category": "italian",
-        "ingredients": [
-            "pasta",
-            "eggs",
-            "bacon",
-            "parmesan"
-        ]
+        "category": "italian"
     },
     {
         "name": "Sriracha Meatballs",
-        "category": "asian",
-        "ingredients": [
-            "ground turkey",
-            "panko breadcrumbs",
-            "eggs",
-            "green onions",
-            "sriracha",
-            "soy sauce",
-            "rice wine vinegar",
-            "honey",
-            "ginger",
-            "garlic"
-        ]
+        "category": "asian"
     },
     {
         "name": "Creamy Dijon Chicken",
-        "category": "french",
-        "ingredients": [
-            "chicken",
-            "summer squash",
-            "dijon mustard",
-            "olive oil",
-            "orzo"
-        ]
+        "category": "french"
     },
     {
         "name": "Crockpot Marry Me Chicken",
-        "category": "crockpot",
-        "ingredients": [
-            "chicken",
-            "chicken broth",
-            "heavy cream",
-            "parmesan cheese",
-            "sundried tomatoes",
-            "garlic",
-            "dried oregano",
-            "dried thyme",
-            "orzo"
-        ]
+        "category": "crockpot"
     },
     {
         "name": "Cashew Chicken",
-        "category": "asian",
-        "ingredients": [
-            "soy sauce",
-            "honey",
-            "rice wine vinegar",
-            "garlic",
-            "ginger",
-            "red bell pepper",
-            "orange bell pepper",
-            "yellow bell pepper",
-            "red onion",
-            "chicken",
-            "cashews"
-        ]
+        "category": "asian"
     },
     {
         "name": "Pork Tenderloin",
-        "category": "bbq",
-        "ingredients": [
-            "pork loin",
-            "peppercorns",
-            "salt",
-            "dried thyme",
-            "rosemary",
-            "red pepper flakes",
-            "garlic"
-        ]
+        "category": "bbq"
     },
     {
         "name": "Thai Basil Chicken",
-        "category": "asian",
-        "ingredients": [
-            "chicken",
-            "garlic",
-            "water",
-            "hoisin sauce",
-            "dark soy sauce",
-            "soy sauce",
-            "sugar",
-            "grapeseed oil",
-            "thai basil",
-            "egg",
-            "jasmine rice",
-            "carrot"
-        ]
+        "category": "asian"
     },
     {
         "name": "Five Spice Chicken Lo Mein",
-        "category": "asian",
-        "ingredients": [
-            "lo mein noodles",
-            "sesame oil",
-            "balsamic vinegar",
-            "soy sauce",
-            "five spice",
-            "mirin",
-            "cornstarch",
-            "canola oil",
-            "chicken",
-            "onion",
-            "garlic",
-            "baby bok choy",
-            "carrot",
-            "green onion"
-        ]
+        "category": "asian"
     },
     {
         "name": "Chicken Lo Mein",
-        "category": "asian",
-        "ingredients": [
-            "lo mein noodle package",
-            "chicken broth",
-            "sesame oil",
-            "soy sauce",
-            "hoisin",
-            "cornstarch",
-            "canola oil",
-            "chicken",
-            "onion",
-            "garlic",
-            "baby bok choy",
-            "carrot",
-            "snow peas",
-            "ginger"
-        ]
+        "category": "asian"
     },
     {
         "name": "Chicken and Rice",
-        "category": "american",
-        "ingredients": [
-            "chicken",
-            "cheddar and broccoli rice"
-        ]
+        "category": "american"
     },
     {
         "name": "Crispy Tacos",
-        "category": "mexican",
-        "ingredients": [
-            "ground beef",
-            "sharp cheddar",
-            "taco bell box"
-        ]
+        "category": "mexican"
     },
     {
         "name": "Greek chicken",
-        "category": "mediterranean",
-        "ingredients": [
-            "chicken",
-            "zucchini",
-            "couscous",
-            "grape tomatoes",
-            "small pita",
-            "sriracha",
-            "greek yogurt",
-            "lemon juice",
-            "garlic"
-        ]
+        "category": "mediterranean"
     },
     {
         "name": "Greek Spicy Pita",
-        "category": "mediterranean",
-        "ingredients": [
-            "chicken",
-            "small pita",
-            "sriracha",
-            "greek yogurt",
-            "lemon juice",
-            "garlic",
-            "zucchini"
-        ]
+        "category": "mediterranean"
     },
     {
         "name": "Crockpot Beef Stroganoff",
-        "category": "crockpot",
-        "ingredients": [
-            "stew beef",
-            "onion",
-            "beef broth",
-            "sour cream",
-            "flour",
-            "garlic",
-            "worcestershire sauce",
-            "paprika"
-        ]
+        "category": "crockpot"
     },
     {
         "name": "Creamy Tortellini",
-        "category": "crockpot",
-        "ingredients": [
-            "italian sausage",
-            "onion",
-            "canned diced tomatoes",
-            "canned tomato sauce",
-            "chicken broth",
-            "heavy cream",
-            "garlic",
-            "cheese tortellini package",
-            "spinach",
-            "dried basil",
-            "dried oregano",
-            "grated parmesan"
-        ]
+        "category": "crockpot"
     },
     {
         "name": "Smash Burger",
-        "category": "american",
-        "ingredients": [
-            "ground beef",
-            "cheese",
-            "brioche buns"
-        ]
+        "category": "american"
     },
     {
         "name": "Pizza",
-        "category": "italian",
-        "ingredients": [
-            "turkey pepperoni",
-            "rosemary",
-            "red pepper flakes",
-            "fennel seeds",
-            "garlic powder",
-            "pizza dough"
-        ]
+        "category": "italian"
     },
     {
         "name": "General Tso Crockpot",
-        "category": "crockpot",
-        "ingredients": [
-            "chicken",
-            "cornstarch",
-            "vegetable oil",
-            "hoisin sauce",
-            "soy sauce",
-            "brown sugar",
-            "garlic",
-            "rice wine vinegar",
-            "sesame oil",
-            "ginger",
-            "red pepper flakes"
-        ]
+        "category": "crockpot"
     },
     {
         "name": "Lemon Snappea Chicken",
-        "category": "american",
-        "ingredients": [
-            "chicken",
-            "heavy cream",
-            "herbes de provence",
-            "rosemary",
-            "lemon juice",
-            "lemon zest",
-            "orzo"
-        ]
+        "category": "american"
     },
     {
         "name": "Salsa",
-        "category": "mexican",
-        "ingredients": [
-            "roma tomato",
-            "jalapeno",
-            "red onion",
-            "cilantro",
-            "lime juice",
-            "cumin",
-            "chili powder",
-            "garlic powder",
-            "canned tomato"
-        ]
+        "category": "mexican"
     },
     {
         "name": "Beef Brussel Sprout Sheet Pan",
-        "category": "american",
-        "ingredients": [
-            "ground beef",
-            "brussel sprouts",
-            "sweet potato",
-            "maple syrup",
-            "dijon mustard",
-            "red onion",
-            "herbes de provence",
-            "garlic"
-        ]
+        "category": "american"
     },
     {
         "name": "Miso Ramen",
-        "category": "asian",
-        "ingredients": [
-            "chicken",
-            "chicken stock",
-            "beef stock",
-            "yellow miso",
-            "bacon",
-            "spinach",
-            "sriracha",
-            "garlic",
-            "shallot"
-        ]
+        "category": "asian"
     },
     {
         "name": "Creamy Wild Rice Soup",
-        "category": "crockpot",
-        "ingredients": [
-            "wild rice blend",
-            "yellow onion",
-            "carrot",
-            "celery",
-            "butter",
-            "garlic",
-            "chicken broth",
-            "herbes de provence",
-            "flour",
-            "milk",
-            "heavy cream",
-            "lemon"
-        ]
+        "category": "crockpot"
     },
     {
         "name": "Aspargus Chicken Pasta",
-        "category": "italian",
-        "ingredients": [
-            "chicken",
-            "olive oil",
-            "italian dressing",
-            "balsamic vinegar",
-            "honey",
-            "red pepper flakes",
-            "asparagus",
-            "grape tomato",
-            "penne pasta"
-        ]
+        "category": "italian"
     },
     {
         "name": "Stuffing Meatballs",
-        "category": "american",
-        "ingredients": [
-            "ground turkey",
-            "egg",
-            "stuffing mix",
-            "water"
-        ]
+        "category": "american"
     },
     {
         "name": "Greenbean Stir Fry",
-        "category": "asian",
-        "ingredients": [
-            "ground turkey",
-            "rice wine vinegar",
-            "soy sauce",
-            "hoisin",
-            "sugar",
-            "cornstarch",
-            "ginger",
-            "red pepper flakes",
-            "vegetable oil",
-            "sesame oil",
-            "shallot",
-            "garlic",
-            "green beans"
-        ]
+        "category": "asian"
     },
     {
         "name": "Spicy Chicken Tenders",
-        "category": "american",
-        "ingredients": [
-            "chicken tenders",
-            "garlic",
-            "sriracha",
-            "ginger",
-            "olive oil",
-            "soy sauce",
-            "apple cider vinegar",
-            "lime juice",
-            "sugar"
-        ]
+        "category": "american"
     },
     {
         "name": "Cilantro Lime Chicken and Rice",
-        "category": "mexican",
-        "ingredients": [
-            "chicken",
-            "cilantro",
-            "garlic",
-            "lime juice",
-            "mexican rice"
-        ]
+        "category": "mexican"
     },
     {
         "name": "Crockpot Chicken and Noodles",
-        "category": "crockpot",
-        "ingredients": [
-            "chicken",
-            "salt",
-            "black pepper",
-            "garlic powder",
-            "cream of chicken soup",
-            "unsalted butter",
-            "msg",
-            "chicken broth",
-            "egg noodles frozen"
-        ]
+        "category": "crockpot"
     },
     {
         "name": "Creamy Beef Orzo",
-        "category": "american",
-        "ingredients": [
-            "ground beef",
-            "onion",
-            "garlic",
-            "red pepper flakes",
-            "herbes de provence",
-            "orzo",
-            "beef broth",
-            "canned tomato sauce",
-            "heavy cream",
-            "worcestershire sauce",
-            "parmesan cheese",
-            "spinach"
-        ]
+        "category": "american"
     },
     {
         "name": "Lunch - Mexican Bowls",
-        "category": "mexican",
-        "ingredients": [
-            "ground turkey",
-            "canned rotel",
-            "cream of chicken soup",
-            "canned black beans",
-            "canned corn",
-            "jasmine rice",
-            "taco seasoning"
-        ]
+        "category": "mexican"
     },
     {
         "name": "Lunch - Soup and Sandwiches",
-        "category": "american",
-        "ingredients": [
-            "canned soup",
-            "bread",
-            "deli turkey",
-            "cheese",
-            "bag chips"
-        ]
+        "category": "american"
     },
     {
         "name": "Crockpot Chicken and Dumplings",
-        "category": "crockpot",
-        "ingredients": [
-            "chicken",
-            "bay leaves",
-            "dried rosemary",
-            "dried thyme",
-            "garlic powder",
-            "chicken broth",
-            "carrot",
-            "onion",
-            "cream of chicken soup",
-            "frozen peas"
-        ]
+        "category": "crockpot"
     },
     {
         "name": "Chicken and Noodles",
-        "category": "crockpot",
-        "ingredients": [
-            "chicken",
-            "poultry seasoning",
-            "garlic powder",
-            "cream of chicken soup",
-            "unsalted butter",
-            "msg",
-            "egg noodles",
-            "chicken broth"
-        ]
+        "category": "crockpot"
     },
     {
         "name": "Beef and Noodles",
-        "category": "crockpot",
-        "ingredients": [
-            "beef roast",
-            "beefy onion soup",
-            "cream of mushroom soup",
-            "garlic",
-            "beef broth",
-            "egg noodles"
-        ]
+        "category": "crockpot"
     },
     {
         "name": "Lunch - Asian Bowls",
-        "category": "asian",
-        "ingredients": [
-            "ground turkey",
-            "snow peas",
-            "bell pepper",
-            "jasmine rice",
-            "canned water chestnuts",
-            "soy sauce",
-            "dark soy sauce",
-            "sriracha",
-            "rice wine vinegar",
-            "honey"
-        ]
+        "category": "asian"
     },
     {
         "name": "Lunch - Mediterranean Bowls",
-        "category": "mediterranean",
-        "ingredients": [
-            "pearl couscous",
-            "english cucumber",
-            "bell pepper",
-            "red onion",
-            "grape tomatoes",
-            "canned chickpeas",
-            "feta cheese",
-            "lemon",
-            "red wine vinegar",
-            "olive oil",
-            "lemon juice",
-            "garlic",
-            "dried oregano",
-            "dijon mustard",
-            "ground turkey",
-            "panko breadcrumbs",
-            "egg"
-        ]
+        "category": "mediterranean"
     },
     {
         "name": "Spicy Yogurt Spaghetti",
-        "category": "asian",
-        "ingredients": [
-            "ground turkey",
-            "spaghetti",
-            "greek yogurt",
-            "chili crisp"
-        ]
+        "category": "asian"
     },
     {
         "name": "Miso Mayo Chicken Bowl",
-        "category": "asian",
-        "ingredients": [
-            "chicken",
-            "soy sauce",
-            "mayonnaise",
-            "miso",
-            "leek",
-            "brussels sprouts",
-            "olive oil",
-            "rice wine vinegar",
-            "jasmine rice",
-            "sesame seeds"
-        ]
+        "category": "asian"
     },
     {
         "name": "Smoked Stuff Bell Pepper",
-        "category": "bbq",
-        "ingredients": [
-            "bell pepper",
-            "ground beef",
-            "yellow onion",
-            "onion powder",
-            "garlic powder",
-            "jasmine rice",
-            "canned stewed tomato",
-            "canned tomato sauce",
-            "cheddar cheese"
-        ]
+        "category": "bbq"
+    },
+    {
+        "name": "Harissa-butter Steak with Carrots",
+        "category": "american"
+    },
+    {
+        "name": "Caramelized Pork and Cucumber Stir-Fry",
+        "category": "asian"
     }
 ]
