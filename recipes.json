@@ -1,1000 +1,581 @@
 [
     {
         "name": "Pasta Carbonara",
-        "ingredients": {
-            "pasta": 1,
-            "eggs": 2,
-            "bacon": 0.5,
-            "parmesan": 0.25
-        },
-        "units": {
-            "pasta": "pound",
-            "eggs": "whole",
-            "bacon": "pound",
-            "parmesan": "cup"
-        },
-        "category": "italian"
+        "category": "italian",
+        "ingredients": [
+            "pasta",
+            "eggs",
+            "bacon",
+            "parmesan"
+        ]
     },
     {
         "name": "Sriracha Meatballs",
-        "ingredients": {
-            "ground turkey": 1.0,
-            "panko breadcrumbs": 1.0,
-            "eggs": 2.0,
-            "green onions": 0.25,
-            "sriracha": 0.25,
-            "soy sauce": 3.0,
-            "rice wine vinegar": 3.0,
-            "honey": 3.0,
-            "ginger": 1.0,
-            "garlic": 2.0
-        },
-        "units": {
-            "ground turkey": "pounds",
-            "panko breadcrumbs": "cup",
-            "eggs": "whole",
-            "green onions": "cup",
-            "sriracha": "cup",
-            "soy sauce": "tbsp",
-            "rice wine vinegar": "tbsp",
-            "honey": "tbsp",
-            "ginger": "tbsp",
-            "garlic": "tbsp"
-        },
-        "category": "asian"
+        "category": "asian",
+        "ingredients": [
+            "ground turkey",
+            "panko breadcrumbs",
+            "eggs",
+            "green onions",
+            "sriracha",
+            "soy sauce",
+            "rice wine vinegar",
+            "honey",
+            "ginger",
+            "garlic"
+        ]
     },
     {
         "name": "Creamy Dijon Chicken",
-        "ingredients": {
-            "chicken": 1.0,
-            "summer squash": 1.0,
-            "dijon mustard": 1.0,
-            "olive oil": 3.0,
-            "orzo": 1.0
-        },
-        "units": {
-            "chicken": "pounds",
-            "summer squash": "whole",
-            "dijon mustard": "tbsp",
-            "olive oil": "tbsp",
-            "orzo": "cup"
-        },
-        "category": "french"
+        "category": "french",
+        "ingredients": [
+            "chicken",
+            "summer squash",
+            "dijon mustard",
+            "olive oil",
+            "orzo"
+        ]
     },
     {
         "name": "Crockpot Marry Me Chicken",
-        "ingredients": {
-            "chicken": 1.0,
-            "chicken broth": 1.0,
-            "heavy cream": 1.0,
-            "parmesan cheese": 0.5,
-            "sundried tomatoes": 0.5,
-            "garlic": 2.0,
-            "dried oregano": 1.0,
-            "dried thyme": 1.0,
-            "orzo": 1.0
-        },
-        "units": {
-            "chicken": "pounds",
-            "chicken broth": "cup",
-            "heavy cream": "cup",
-            "parmesan cheese": "cup",
-            "sundried tomatoes": "cup",
-            "garlic": "tbsp",
-            "dried oregano": "tsp",
-            "dried thyme": "tsp",
-            "orzo": "cup"
-        },
-        "category": "crockpot"
+        "category": "crockpot",
+        "ingredients": [
+            "chicken",
+            "chicken broth",
+            "heavy cream",
+            "parmesan cheese",
+            "sundried tomatoes",
+            "garlic",
+            "dried oregano",
+            "dried thyme",
+            "orzo"
+        ]
     },
     {
         "name": "Cashew Chicken",
-        "ingredients": {
-            "soy sauce": 0.33,
-            "honey": 3.0,
-            "rice wine vinegar": 2.0,
-            "garlic": 2.0,
-            "ginger": 2.0,
-            "red bell pepper": 1.0,
-            "orange bell pepper": 1.0,
-            "yellow bell pepper": 1.0,
-            "red onion": 1.0,
-            "chicken": 1.0,
-            "cashews": 0.5
-        },
-        "units": {
-            "soy sauce": "cup",
-            "honey": "tbsp",
-            "rice wine vinegar": "tbsp",
-            "garlic": "tbsp",
-            "ginger": "tsp",
-            "red bell pepper": "whole",
-            "orange bell pepper": "whole",
-            "yellow bell pepper": "whole",
-            "red onion": "whole",
-            "chicken": "pound",
-            "cashews": "cup"
-        },
-        "category": "asian"
+        "category": "asian",
+        "ingredients": [
+            "soy sauce",
+            "honey",
+            "rice wine vinegar",
+            "garlic",
+            "ginger",
+            "red bell pepper",
+            "orange bell pepper",
+            "yellow bell pepper",
+            "red onion",
+            "chicken",
+            "cashews"
+        ]
     },
     {
         "name": "Pork Tenderloin",
-        "ingredients": {
-            "pork loin": 1.0,
-            "peppercorns": 1.0,
-            "salt": 1.0,
-            "dried thyme": 1.0,
-            "rosemary": 1.0,
-            "red pepper flakes": 0.5,
-            "garlic": 2.0
-        },
-        "units": {
-            "pork loin": "pounds",
-            "peppercorns": "tbsp",
-            "salt": "tsp",
-            "dried thyme": "tsp",
-            "rosemary": "tsp",
-            "red pepper flakes": "tsp",
-            "garlic": "tbsp"
-        },
-        "category": "bbq"
+        "category": "bbq",
+        "ingredients": [
+            "pork loin",
+            "peppercorns",
+            "salt",
+            "dried thyme",
+            "rosemary",
+            "red pepper flakes",
+            "garlic"
+        ]
     },
     {
         "name": "Thai Basil Chicken",
-        "ingredients": {
-            "chicken": 1.0,
-            "garlic": 4.0,
-            "water": 2.0,
-            "hoisin sauce": 2.0,
-            "dark soy sauce": 2.0,
-            "soy sauce": 2.0,
-            "sugar": 2.0,
-            "grapeseed oil": 2.0,
-            "thai basil": 1.0,
-            "egg": 2.0,
-            "jasmine rice": 1.0,
-            "carrot": 1.0
-        },
-        "units": {
-            "chicken": "pounds",
-            "garlic": "tbsp",
-            "water": "tbsp",
-            "hoisin sauce": "tbsp",
-            "dark soy sauce": "tsp",
-            "soy sauce": "tsp",
-            "sugar": "tsp",
-            "grapeseed oil": "tbsp",
-            "thai basil": "cup",
-            "egg": "whole",
-            "jasmine rice": "cup",
-            "carrot": "whole"
-        },
-        "category": "asian"
+        "category": "asian",
+        "ingredients": [
+            "chicken",
+            "garlic",
+            "water",
+            "hoisin sauce",
+            "dark soy sauce",
+            "soy sauce",
+            "sugar",
+            "grapeseed oil",
+            "thai basil",
+            "egg",
+            "jasmine rice",
+            "carrot"
+        ]
     },
     {
         "name": "Five Spice Chicken Lo Mein",
-        "ingredients": {
-            "lo mein noodles": 1.0,
-            "sesame oil": 1.0,
-            "balsamic vinegar": 2.0,
-            "soy sauce": 3.0,
-            "five spice": 2.0,
-            "mirin": 2.0,
-            "cornstarch": 1.0,
-            "canola oil": 3.0,
-            "chicken": 1.0,
-            "onion": 1.0,
-            "garlic": 2.0,
-            "baby bok choy": 2.0,
-            "carrot": 1.0,
-            "green onion": 4.0
-        },
-        "units": {
-            "lo mein noodles": "pound",
-            "sesame oil": "tbsp",
-            "balsamic vinegar": "tbsp",
-            "soy sauce": "tbsp",
-            "five spice": "tbsp",
-            "mirin": "tbsp",
-            "cornstarch": "tbsp",
-            "canola oil": "tbsp",
-            "chicken": "pound",
-            "onion": "cup",
-            "garlic": "tbsp",
-            "baby bok choy": "cups",
-            "carrot": "whole",
-            "green onion": "whole"
-        },
-        "category": "asian"
+        "category": "asian",
+        "ingredients": [
+            "lo mein noodles",
+            "sesame oil",
+            "balsamic vinegar",
+            "soy sauce",
+            "five spice",
+            "mirin",
+            "cornstarch",
+            "canola oil",
+            "chicken",
+            "onion",
+            "garlic",
+            "baby bok choy",
+            "carrot",
+            "green onion"
+        ]
     },
     {
         "name": "Chicken Lo Mein",
         "category": "asian",
-        "ingredients": {
-            "lo mein noodle package": 1.0,
-            "chicken broth": 0.33,
-            "sesame oil": 1.0,
-            "soy sauce": 2.0,
-            "hoisin": 2.0,
-            "cornstarch": 2.0,
-            "canola oil": 3.0,
-            "chicken": 1.0,
-            "onion": 0.5,
-            "garlic": 2.0,
-            "baby bok choy": 2.0,
-            "carrot": 0.5,
-            "snow peas": 1.0,
-            "ginger": 1.0
-        },
-        "units": {
-            "lo mein noodle package": "whole",
-            "chicken broth": "cup",
-            "sesame oil": "tbsp",
-            "soy sauce": "tsp",
-            "hoisin": "tbsp",
-            "cornstarch": "tsp",
-            "canola oil": "tbsp",
-            "chicken": "pound",
-            "onion": "cup",
-            "garlic": "tbsp",
-            "baby bok choy": "cups",
-            "carrot": "whole",
-            "snow peas": "cup",
-            "ginger": "tsp"
-        }
+        "ingredients": [
+            "lo mein noodle package",
+            "chicken broth",
+            "sesame oil",
+            "soy sauce",
+            "hoisin",
+            "cornstarch",
+            "canola oil",
+            "chicken",
+            "onion",
+            "garlic",
+            "baby bok choy",
+            "carrot",
+            "snow peas",
+            "ginger"
+        ]
     },
     {
         "name": "Chicken and Rice",
         "category": "american",
-        "ingredients": {
-            "chicken": 1.0,
-            "cheddar and broccoli rice": 1.0
-        },
-        "units": {
-            "chicken": "pound",
-            "cheddar and broccoli rice": "whole"
-        }
+        "ingredients": [
+            "chicken",
+            "cheddar and broccoli rice"
+        ]
     },
     {
         "name": "Crispy Tacos",
         "category": "mexican",
-        "ingredients": {
-            "ground beef": 1.0,
-            "sharp cheddar": 2.0,
-            "taco bell box": 1.0
-        },
-        "units": {
-            "ground beef": "pound",
-            "sharp cheddar": "tbsp",
-            "taco bell box": "whole"
-        }
+        "ingredients": [
+            "ground beef",
+            "sharp cheddar",
+            "taco bell box"
+        ]
     },
     {
         "name": "Greek chicken",
         "category": "mediterranean",
-        "ingredients": {
-            "chicken": 1.0,
-            "zucchini": 1.0,
-            "couscous": 1.0,
-            "grape tomatoes": 1.0,
-            "small pita": 1.0,
-            "sriracha": 0.5,
-            "greek yogurt": 0.5,
-            "lemon juice": 2.0,
-            "garlic": 1.0
-        },
-        "units": {
-            "chicken": "pound",
-            "zucchini": "whole",
-            "couscous": "cup",
-            "grape tomatoes": "whole",
-            "small pita": "whole",
-            "sriracha": "cup",
-            "greek yogurt": "cup",
-            "lemon juice": "tsp",
-            "garlic": "tbsp"
-        }
+        "ingredients": [
+            "chicken",
+            "zucchini",
+            "couscous",
+            "grape tomatoes",
+            "small pita",
+            "sriracha",
+            "greek yogurt",
+            "lemon juice",
+            "garlic"
+        ]
     },
     {
         "name": "Greek Spicy Pita",
         "category": "mediterranean",
-        "ingredients": {
-            "chicken": 1.0,
-            "small pita": 1.0,
-            "sriracha": 0.5,
-            "greek yogurt": 0.5,
-            "lemon juice": 2.0,
-            "garlic": 1.0,
-            "zucchini": 1.0
-        },
-        "units": {
-            "chicken": "pound",
-            "small pita": "whole",
-            "sriracha": "cup",
-            "greek yogurt": "cup",
-            "lemon juice": "tsp",
-            "garlic": "tbsp",
-            "zucchini": "whole"
-        }
+        "ingredients": [
+            "chicken",
+            "small pita",
+            "sriracha",
+            "greek yogurt",
+            "lemon juice",
+            "garlic",
+            "zucchini"
+        ]
     },
     {
         "name": "Crockpot Beef Stroganoff",
         "category": "crockpot",
-        "ingredients": {
-            "stew beef": 2.0,
-            "onion": 1.0,
-            "beef broth": 2.0,
-            "sour cream": 1.0,
-            "flour": 0.25,
-            "garlic": 3.0,
-            "worcestershire sauce": 2.0,
-            "paprika": 1.0
-        },
-        "units": {
-            "stew beef": "pound",
-            "onion": "whole",
-            "beef broth": "cups",
-            "sour cream": "cup",
-            "flour": "cup",
-            "garlic": "tbsp",
-            "worcestershire sauce": "tbsp",
-            "paprika": "tsp"
-        }
+        "ingredients": [
+            "stew beef",
+            "onion",
+            "beef broth",
+            "sour cream",
+            "flour",
+            "garlic",
+            "worcestershire sauce",
+            "paprika"
+        ]
     },
     {
         "name": "Creamy Tortellini",
         "category": "crockpot",
-        "ingredients": {
-            "italian sausage": 1.0,
-            "onion": 1.0,
-            "canned diced tomatoes": 1.0,
-            "canned tomato sauce": 1.0,
-            "chicken broth": 1.0,
-            "heavy cream": 1.0,
-            "garlic": 3.0,
-            "cheese tortellini package": 1.0,
-            "spinach": 4.0,
-            "dried basil": 1.0,
-            "dried oregano": 1.0,
-            "grated parmesan": 0.25
-        },
-        "units": {
-            "italian sausage": "pound",
-            "onion": "whole",
-            "canned diced tomatoes": "whole",
-            "canned tomato sauce": "whole",
-            "chicken broth": "cups",
-            "heavy cream": "cup",
-            "garlic": "tbsp",
-            "cheese tortellini package": "whole",
-            "spinach": "cups",
-            "dried basil": "tsp",
-            "dried oregano": "tsp",
-            "grated parmesan": "cup"
-        }
+        "ingredients": [
+            "italian sausage",
+            "onion",
+            "canned diced tomatoes",
+            "canned tomato sauce",
+            "chicken broth",
+            "heavy cream",
+            "garlic",
+            "cheese tortellini package",
+            "spinach",
+            "dried basil",
+            "dried oregano",
+            "grated parmesan"
+        ]
     },
     {
         "name": "Smash Burger",
         "category": "american",
-        "ingredients": {
-            "ground beef": 1.0,
-            "cheese": 0.5,
-            "brioche buns": 4.0
-        },
-        "units": {
-            "ground beef": "pound",
-            "cheese": "cup",
-            "brioche buns": "whole"
-        }
+        "ingredients": [
+            "ground beef",
+            "cheese",
+            "brioche buns"
+        ]
     },
     {
         "name": "Pizza",
         "category": "italian",
-        "ingredients": {
-            "turkey pepperoni": 1.0,
-            "rosemary": 1.0,
-            "red pepper flakes": 2.0,
-            "fennel seeds": 1.0,
-            "garlic powder": 1.0,
-            "pizza dough": 1.0
-        },
-        "units": {
-            "turkey pepperoni": "cup",
-            "rosemary": "tsp",
-            "red pepper flakes": "tsp",
-            "fennel seeds": "tsp",
-            "garlic powder": "tsp",
-            "pizza dough": "whole"
-        }
+        "ingredients": [
+            "turkey pepperoni",
+            "rosemary",
+            "red pepper flakes",
+            "fennel seeds",
+            "garlic powder",
+            "pizza dough"
+        ]
     },
     {
         "name": "General Tso Crockpot",
         "category": "crockpot",
-        "ingredients": {
-            "chicken": 1.0,
-            "cornstarch": 0.25,
-            "vegetable oil": 1.0,
-            "hoisin sauce": 0.5,
-            "soy sauce": 2.0,
-            "brown sugar": 0.5,
-            "garlic": 3.0,
-            "rice wine vinegar": 3.0,
-            "sesame oil": 1.0,
-            "ginger": 0.25,
-            "red pepper flakes": 1.0
-        },
-        "units": {
-            "chicken": "pound",
-            "cornstarch": "cup",
-            "vegetable oil": "tbsp",
-            "hoisin sauce": "cup",
-            "soy sauce": "tbsp",
-            "brown sugar": "cup",
-            "garlic": "tbsp",
-            "rice wine vinegar": "tbsp",
-            "sesame oil": "tsp",
-            "ginger": "tsp",
-            "red pepper flakes": "tsp"
-        }
+        "ingredients": [
+            "chicken",
+            "cornstarch",
+            "vegetable oil",
+            "hoisin sauce",
+            "soy sauce",
+            "brown sugar",
+            "garlic",
+            "rice wine vinegar",
+            "sesame oil",
+            "ginger",
+            "red pepper flakes"
+        ]
     },
     {
         "name": "Lemon Snappea Chicken",
         "category": "american",
-        "ingredients": {
-            "chicken": 1.0,
-            "heavy cream": 0.25,
-            "herbes de provence": 1.0,
-            "rosemary": 1.0,
-            "lemon juice": 1.0,
-            "lemon zest": 1.0,
-            "orzo": 1.0
-        },
-        "units": {
-            "chicken": "pound",
-            "heavy cream": "cup",
-            "herbes de provence": "tbsp",
-            "rosemary": "tbsp",
-            "lemon juice": "tbsp",
-            "lemon zest": "whole",
-            "orzo": "cup"
-        }
+        "ingredients": [
+            "chicken",
+            "heavy cream",
+            "herbes de provence",
+            "rosemary",
+            "lemon juice",
+            "lemon zest",
+            "orzo"
+        ]
     },
     {
         "name": "Salsa",
         "category": "mexican",
-        "ingredients": {
-            "roma tomato": 4.0,
-            "jalapeno": 3.0,
-            "red onion": 0.5,
-            "cilantro": 1.0,
-            "lime juice": 0.25,
-            "cumin": 1.0,
-            "chili powder": 2.0,
-            "garlic powder": 2.0,
-            "canned tomato": 1.0
-        },
-        "units": {
-            "roma tomato": "whole",
-            "jalapeno": "whole",
-            "red onion": "whole",
-            "cilantro": "whole",
-            "lime juice": "cup",
-            "cumin": "tsp",
-            "chili powder": "tsp",
-            "garlic powder": "tsp",
-            "canned tomato": "whole"
-        }
+        "ingredients": [
+            "roma tomato",
+            "jalapeno",
+            "red onion",
+            "cilantro",
+            "lime juice",
+            "cumin",
+            "chili powder",
+            "garlic powder",
+            "canned tomato"
+        ]
     },
     {
         "name": "Beef Brussel Sprout Sheet Pan",
         "category": "american",
-        "ingredients": {
-            "ground beef": 1.0,
-            "brussel sprouts": 1.0,
-            "sweet potato": 1.0,
-            "maple syrup": 0.33,
-            "dijon mustard": 0.33,
-            "red onion": 0.5,
-            "herbes de provence": 1.0,
-            "garlic": 1.0
-        },
-        "units": {
-            "ground beef": "pound",
-            "brussel sprouts": "pound",
-            "sweet potato": "whole",
-            "maple syrup": "cup",
-            "dijon mustard": "cup",
-            "red onion": "whole",
-            "herbes de provence": "tsp",
-            "garlic": "tbsp"
-        }
+        "ingredients": [
+            "ground beef",
+            "brussel sprouts",
+            "sweet potato",
+            "maple syrup",
+            "dijon mustard",
+            "red onion",
+            "herbes de provence",
+            "garlic"
+        ]
     },
     {
         "name": "Miso Ramen",
         "category": "asian",
-        "ingredients": {
-            "chicken": 1.0,
-            "chicken stock": 1.0,
-            "beef stock": 1.0,
-            "yellow miso": 0.33,
-            "bacon": 0.25,
-            "spinach": 3.0,
-            "sriracha": 1.0,
-            "garlic": 1.0,
-            "shallot": 1.0
-        },
-        "units": {
-            "chicken": "pound",
-            "chicken stock": "whole",
-            "beef stock": "whole",
-            "yellow miso": "cup",
-            "bacon": "pound",
-            "spinach": "cups",
-            "sriracha": "tbsp",
-            "garlic": "tbsp",
-            "shallot": "whole"
-        }
+        "ingredients": [
+            "chicken",
+            "chicken stock",
+            "beef stock",
+            "yellow miso",
+            "bacon",
+            "spinach",
+            "sriracha",
+            "garlic",
+            "shallot"
+        ]
     },
     {
         "name": "Creamy Wild Rice Soup",
         "category": "crockpot",
-        "ingredients": {
-            "wild rice blend": 1.0,
-            "yellow onion": 1.0,
-            "carrot": 1.0,
-            "celery": 1.0,
-            "butter": 7.0,
-            "garlic": 3.0,
-            "chicken broth": 4.0,
-            "herbes de provence": 1.0,
-            "flour": 0.5,
-            "milk": 1.5,
-            "heavy cream": 0.5,
-            "lemon": 2.0
-        },
-        "units": {
-            "wild rice blend": "whole",
-            "yellow onion": "whole",
-            "carrot": "cup",
-            "celery": "cup",
-            "butter": "tbsp",
-            "garlic": "tbsp",
-            "chicken broth": "cups",
-            "herbes de provence": "tsp",
-            "flour": "cup",
-            "milk": "cups",
-            "heavy cream": "cup",
-            "lemon": "tsp"
-        }
+        "ingredients": [
+            "wild rice blend",
+            "yellow onion",
+            "carrot",
+            "celery",
+            "butter",
+            "garlic",
+            "chicken broth",
+            "herbes de provence",
+            "flour",
+            "milk",
+            "heavy cream",
+            "lemon"
+        ]
     },
     {
         "name": "Aspargus Chicken Pasta",
         "category": "italian",
-        "ingredients": {
-            "chicken": 1.0,
-            "olive oil": 1.0,
-            "italian dressing": 0.25,
-            "balsamic vinegar": 0.25,
-            "honey": 1.0,
-            "red pepper flakes": 1.0,
-            "asparagus": 1.0,
-            "grape tomato": 1.0,
-            "penne pasta": 1.0
-        },
-        "units": {
-            "chicken": "pound",
-            "olive oil": "tbsp",
-            "italian dressing": "cup",
-            "balsamic vinegar": "cup",
-            "honey": "tbsp",
-            "red pepper flakes": "tsp",
-            "asparagus": "pound",
-            "grape tomato": "whole",
-            "penne pasta": "cup"
-        }
+        "ingredients": [
+            "chicken",
+            "olive oil",
+            "italian dressing",
+            "balsamic vinegar",
+            "honey",
+            "red pepper flakes",
+            "asparagus",
+            "grape tomato",
+            "penne pasta"
+        ]
     },
     {
         "name": "Stuffing Meatballs",
         "category": "american",
-        "ingredients": {
-            "ground turkey": 1.0,
-            "egg": 1.0,
-            "stuffing mix": 1.0,
-            "water": 1.0
-        },
-        "units": {
-            "ground turkey": "pound",
-            "egg": "whole",
-            "stuffing mix": "whole",
-            "water": "cup"
-        }
+        "ingredients": [
+            "ground turkey",
+            "egg",
+            "stuffing mix",
+            "water"
+        ]
     },
     {
         "name": "Greenbean Stir Fry",
         "category": "asian",
-        "ingredients": {
-            "ground turkey": 1.0,
-            "rice wine vinegar": 3.0,
-            "soy sauce": 2.0,
-            "hoisin": 2.0,
-            "sugar": 1.0,
-            "cornstarch": 1.0,
-            "ginger": 1.0,
-            "red pepper flakes": 1.0,
-            "vegetable oil": 1.0,
-            "sesame oil": 1.0,
-            "shallot": 0.33,
-            "garlic": 4.0,
-            "green beans": 1.0
-        },
-        "units": {
-            "ground turkey": "pound",
-            "rice wine vinegar": "tbsp",
-            "soy sauce": "tbsp",
-            "hoisin": "tbsp",
-            "sugar": "tsp",
-            "cornstarch": "tsp",
-            "ginger": "tsp",
-            "red pepper flakes": "tsp",
-            "vegetable oil": "tbsp",
-            "sesame oil": "tbsp",
-            "shallot": "cup",
-            "garlic": "tbsp",
-            "green beans": "whole"
-        }
+        "ingredients": [
+            "ground turkey",
+            "rice wine vinegar",
+            "soy sauce",
+            "hoisin",
+            "sugar",
+            "cornstarch",
+            "ginger",
+            "red pepper flakes",
+            "vegetable oil",
+            "sesame oil",
+            "shallot",
+            "garlic",
+            "green beans"
+        ]
     },
     {
         "name": "Spicy Chicken Tenders",
         "category": "american",
-        "ingredients": {
-            "chicken tenders": 1.0,
-            "garlic": 4.0,
-            "sriracha": 2.0,
-            "ginger": 1.0,
-            "olive oil": 2.0,
-            "soy sauce": 2.0,
-            "apple cider vinegar": 2.0,
-            "lime juice": 1.0,
-            "sugar": 1.0
-        },
-        "units": {
-            "chicken tenders": "pound",
-            "garlic": "tbsp",
-            "sriracha": "tbsp",
-            "ginger": "tsp",
-            "olive oil": "tbsp",
-            "soy sauce": "tbsp",
-            "apple cider vinegar": "tbsp",
-            "lime juice": "tbsp",
-            "sugar": "tbsp"
-        }
+        "ingredients": [
+            "chicken tenders",
+            "garlic",
+            "sriracha",
+            "ginger",
+            "olive oil",
+            "soy sauce",
+            "apple cider vinegar",
+            "lime juice",
+            "sugar"
+        ]
     },
     {
         "name": "Cilantro Lime Chicken and Rice",
         "category": "mexican",
-        "ingredients": {
-            "chicken": 1.0,
-            "cilantro": 1.0,
-            "garlic": 1.0,
-            "lime juice": 2.0,
-            "mexican rice": 1.0
-        },
-        "units": {
-            "chicken": "pound",
-            "cilantro": "whole",
-            "garlic": "tbsp",
-            "lime juice": "tbsp",
-            "mexican rice": "whole"
-        }
+        "ingredients": [
+            "chicken",
+            "cilantro",
+            "garlic",
+            "lime juice",
+            "mexican rice"
+        ]
     },
     {
         "name": "Crockpot Chicken and Noodles",
         "category": "crockpot",
-        "ingredients": {
-            "chicken": 1.5,
-            "salt": 0.75,
-            "black pepper": 1.0,
-            "garlic powder": 2.0,
-            "cream of chicken soup": 2.0,
-            "unsalted butter": 0.5,
-            "msg": 1.0,
-            "chicken broth": 4.0,
-            "egg noodles frozen": 2.0
-        },
-        "units": {
-            "chicken": "pound",
-            "salt": "tsp",
-            "black pepper": "tsp",
-            "garlic powder": "tsp",
-            "cream of chicken soup": "whole",
-            "unsalted butter": "cup",
-            "msg": "tsp",
-            "chicken broth": "cups",
-            "egg noodles frozen": "whole"
-        }
+        "ingredients": [
+            "chicken",
+            "salt",
+            "black pepper",
+            "garlic powder",
+            "cream of chicken soup",
+            "unsalted butter",
+            "msg",
+            "chicken broth",
+            "egg noodles frozen"
+        ]
     },
     {
         "name": "Creamy Beef Orzo",
         "category": "american",
-        "ingredients": {
-            "ground beef": 1.0,
-            "onion": 0.5,
-            "garlic": 3.0,
-            "red pepper flakes": 1.0,
-            "herbes de provence": 1.0,
-            "orzo": 1.0,
-            "beef broth": 0.75,
-            "canned tomato sauce": 1.0,
-            "heavy cream": 0.5,
-            "worcestershire sauce": 1.0,
-            "parmesan cheese": 0.5,
-            "spinach": 2.0
-        },
-        "units": {
-            "ground beef": "pound",
-            "onion": "whole",
-            "garlic": "tbsp",
-            "red pepper flakes": "tsp",
-            "herbes de provence": "tbsp",
-            "orzo": "cup",
-            "beef broth": "cup",
-            "canned tomato sauce": "whole",
-            "heavy cream": "cup",
-            "worcestershire sauce": "tsp",
-            "parmesan cheese": "cup",
-            "spinach": "cups"
-        }
+        "ingredients": [
+            "ground beef",
+            "onion",
+            "garlic",
+            "red pepper flakes",
+            "herbes de provence",
+            "orzo",
+            "beef broth",
+            "canned tomato sauce",
+            "heavy cream",
+            "worcestershire sauce",
+            "parmesan cheese",
+            "spinach"
+        ]
     },
     {
         "name": "Lunch - Mexican Bowls",
         "category": "mexican",
-        "ingredients": {
-            "ground turkey": 2.0,
-            "canned rotel": 1.0,
-            "cream of chicken soup": 1.0,
-            "canned black beans": 1.0,
-            "canned corn": 1.0,
-            "jasmine rice": 2.0,
-            "taco seasoning": 2.0
-        },
-        "units": {
-            "ground turkey": "pounds",
-            "canned rotel": "whole",
-            "cream of chicken soup": "whole",
-            "canned black beans": "whole",
-            "canned corn": "whole",
-            "jasmine rice": "cups",
-            "taco seasoning": "whole"
-        }
+        "ingredients": [
+            "ground turkey",
+            "canned rotel",
+            "cream of chicken soup",
+            "canned black beans",
+            "canned corn",
+            "jasmine rice",
+            "taco seasoning"
+        ]
     },
     {
         "name": "Lunch - Soup and Sandwiches",
         "category": "american",
-        "ingredients": {
-            "canned soup": 4.0,
-            "bread": 1.0,
-            "deli turkey": 1.0,
-            "cheese": 1.0,
-            "bag chips": 1.0
-        },
-        "units": {
-            "canned soup": "whole",
-            "bread": "whole",
-            "deli turkey": "whole",
-            "cheese": "whole",
-            "bag chips": "whole"
-        }
+        "ingredients": [
+            "canned soup",
+            "bread",
+            "deli turkey",
+            "cheese",
+            "bag chips"
+        ]
     },
     {
         "name": "Crockpot Chicken and Dumplings",
         "category": "crockpot",
-        "ingredients": {
-            "chicken": 2.0,
-            "bay leaves": 2.0,
-            "dried rosemary": 1.0,
-            "dried thyme": 1.0,
-            "garlic powder": 1.0,
-            "chicken broth": 2.0,
-            "carrot": 1.0,
-            "onion": 1.0,
-            "cream of chicken soup": 1.0,
-            "frozen peas": 0.5
-        },
-        "units": {
-            "chicken": "pounds",
-            "bay leaves": "whole",
-            "dried rosemary": "tsp",
-            "dried thyme": "tsp",
-            "garlic powder": "tsp",
-            "chicken broth": "cups",
-            "carrot": "whole",
-            "onion": "whole",
-            "cream of chicken soup": "whole",
-            "frozen peas": "cup"
-        }
+        "ingredients": [
+            "chicken",
+            "bay leaves",
+            "dried rosemary",
+            "dried thyme",
+            "garlic powder",
+            "chicken broth",
+            "carrot",
+            "onion",
+            "cream of chicken soup",
+            "frozen peas"
+        ]
     },
     {
         "name": "Chicken and Noodles",
         "category": "crockpot",
-        "ingredients": {
-            "chicken": 2.0,
-            "poultry seasoning": 1.0,
-            "garlic powder": 2.0,
-            "cream of chicken soup": 2.0,
-            "unsalted butter": 0.5,
-            "msg": 2.0,
-            "egg noodles": 2.0,
-            "chicken broth": 4.0
-        },
-        "units": {
-            "chicken": "pounds",
-            "poultry seasoning": "tsp",
-            "garlic powder": "tsp",
-            "cream of chicken soup": "whole",
-            "unsalted butter": "cup",
-            "msg": "tsp",
-            "egg noodles": "whole",
-            "chicken broth": "cups"
-        }
+        "ingredients": [
+            "chicken",
+            "poultry seasoning",
+            "garlic powder",
+            "cream of chicken soup",
+            "unsalted butter",
+            "msg",
+            "egg noodles",
+            "chicken broth"
+        ]
     },
     {
         "name": "Beef and Noodles",
         "category": "crockpot",
-        "ingredients": {
-            "beef roast": 2.0,
-            "beefy onion soup": 1.0,
-            "cream of mushroom soup": 1.0,
-            "garlic": 1.0,
-            "beef broth": 1.0,
-            "egg noodles": 1.0
-        },
-        "units": {
-            "beef roast": "pounds",
-            "beefy onion soup": "whole",
-            "cream of mushroom soup": "whole",
-            "garlic": "tbsp",
-            "beef broth": "whole",
-            "egg noodles": "whole"
-        }
+        "ingredients": [
+            "beef roast",
+            "beefy onion soup",
+            "cream of mushroom soup",
+            "garlic",
+            "beef broth",
+            "egg noodles"
+        ]
     },
     {
         "name": "Lunch - Asian Bowls",
         "category": "asian",
-        "ingredients": {
-            "ground turkey": 2.0,
-            "snow peas": 1.0,
-            "bell pepper": 1.0,
-            "jasmine rice": 2.0,
-            "canned water chestnuts": 1.0,
-            "soy sauce": 4.0,
-            "dark soy sauce": 2.0,
-            "sriracha": 2.0,
-            "rice wine vinegar": 2.0,
-            "honey": 2.0
-        },
-        "units": {
-            "ground turkey": "pounds",
-            "snow peas": "whole",
-            "bell pepper": "whole",
-            "jasmine rice": "cups",
-            "canned water chestnuts": "whole",
-            "soy sauce": "tbsp",
-            "dark soy sauce": "tbsp",
-            "sriracha": "tbsp",
-            "rice wine vinegar": "tbsp",
-            "honey": "tbsp"
-        }
+        "ingredients": [
+            "ground turkey",
+            "snow peas",
+            "bell pepper",
+            "jasmine rice",
+            "canned water chestnuts",
+            "soy sauce",
+            "dark soy sauce",
+            "sriracha",
+            "rice wine vinegar",
+            "honey"
+        ]
     },
     {
         "name": "Lunch - Mediterranean Bowls",
         "category": "mediterranean",
-        "ingredients": {
-            "pearl couscous": 2.0,
-            "english cucumber": 1.0,
-            "bell pepper": 3.0,
-            "red onion": 0.5,
-            "grape tomatoes": 1.0,
-            "canned chickpeas": 2.0,
-            "feta cheese": 0.5,
-            "lemon": 1.0,
-            "red wine vinegar": 0.25,
-            "olive oil": 0.5,
-            "lemon juice": 1.0,
-            "garlic": 1.0,
-            "dried oregano": 1.0,
-            "dijon mustard": 1.0,
-            "ground turkey": 2.0,
-            "panko breadcrumbs": 1.0,
-            "egg": 1.0
-        },
-        "units": {
-            "pearl couscous": "cups",
-            "english cucumber": "whole",
-            "bell pepper": "whole",
-            "red onion": "whole",
-            "grape tomatoes": "whole",
-            "canned chickpeas": "whole",
-            "feta cheese": "cup",
-            "lemon": "whole",
-            "red wine vinegar": "cup",
-            "olive oil": "cup",
-            "lemon juice": "tbsp",
-            "garlic": "tsp",
-            "dried oregano": "tsp",
-            "dijon mustard": "tsp",
-            "ground turkey": "pounds",
-            "panko breadcrumbs": "cup",
-            "egg": "whole"
-        }
+        "ingredients": [
+            "pearl couscous",
+            "english cucumber",
+            "bell pepper",
+            "red onion",
+            "grape tomatoes",
+            "canned chickpeas",
+            "feta cheese",
+            "lemon",
+            "red wine vinegar",
+            "olive oil",
+            "lemon juice",
+            "garlic",
+            "dried oregano",
+            "dijon mustard",
+            "ground turkey",
+            "panko breadcrumbs",
+            "egg"
+        ]
     },
     {
         "name": "Spicy Yogurt Spaghetti",
         "category": "asian",
-        "ingredients": {
-            "ground turkey": 1.0,
-            "spaghetti": 1.0,
-            "greek yogurt": 1.25,
-            "chili crisp": 2.0
-        },
-        "units": {
-            "ground turkey": "pound",
-            "spaghetti": "pound",
-            "greek yogurt": "cups",
-            "chili crisp": "tbsp"
-        }
+        "ingredients": [
+            "ground turkey",
+            "spaghetti",
+            "greek yogurt",
+            "chili crisp"
+        ]
     },
     {
         "name": "Miso Mayo Chicken Bowl",
         "category": "asian",
-        "ingredients": {
-            "chicken": 1.0,
-            "soy sauce": 1.0,
-            "mayonnaise": 0.75,
-            "miso": 1.0,
-            "leek": 2.0,
-            "brussels sprouts": 1.0,
-            "olive oil": 2.0,
-            "rice wine vinegar": 3.0,
-            "jasmine rice": 1.0,
-            "sesame seeds": 1.0
-        },
-        "units": {
-            "chicken": "pound",
-            "soy sauce": "tbsp",
-            "mayonnaise": "cup",
-            "miso": "tbsp",
-            "leek": "whole",
-            "brussels sprouts": "pound",
-            "olive oil": "tbsp",
-            "rice wine vinegar": "tbsp",
-            "jasmine rice": "cup",
-            "sesame seeds": "tbsp"
-        }
+        "ingredients": [
+            "chicken",
+            "soy sauce",
+            "mayonnaise",
+            "miso",
+            "leek",
+            "brussels sprouts",
+            "olive oil",
+            "rice wine vinegar",
+            "jasmine rice",
+            "sesame seeds"
+        ]
     },
     {
         "name": "Smoked Stuff Bell Pepper",
         "category": "bbq",
-        "ingredients": {
-            "bell pepper": 3.0,
-            "ground beef": 1.0,
-            "yellow onion": 1.0,
-            "onion powder": 0.5,
-            "garlic powder": 0.5,
-            "jasmine rice": 0.5,
-            "canned stewed tomato": 1.0,
-            "canned tomato sauce": 1.0,
-            "cheddar cheese": 0.25
-        },
-        "units": {
-            "bell pepper": "whole",
-            "ground beef": "pound",
-            "yellow onion": "whole",
-            "onion powder": "tsp",
-            "garlic powder": "tsp",
-            "jasmine rice": "cup",
-            "canned stewed tomato": "whole",
-            "canned tomato sauce": "whole",
-            "cheddar cheese": "cup"
-        }
+        "ingredients": [
+            "bell pepper",
+            "ground beef",
+            "yellow onion",
+            "onion powder",
+            "garlic powder",
+            "jasmine rice",
+            "canned stewed tomato",
+            "canned tomato sauce",
+            "cheddar cheese"
+        ]
     }
 ]
