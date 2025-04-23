@@ -166,5 +166,93 @@
     {
         "name": "Caramelized Pork and Cucumber Stir-Fry",
         "category": "asian"
+    },
+    {
+        "name": "Air Fryer Chimichangas",
+        "category": "mexican"
+    },
+    {
+        "name": "Aspargus, Chicken, and Penne Pasta",
+        "category": "italian"
+    },
+    {
+        "name": "Baked Ziti",
+        "category": "italian"
+    },
+    {
+        "name": "Bruschetta Chicken Pasta",
+        "category": "italian"
+    },
+    {
+        "name": "Chicken Thighs With Spiced Couscous and Carrots",
+        "category": "mediterranean"
+    },
+    {
+        "name": "Chicken and Whitebean Enchiladas",
+        "category": "mexican"
+    },
+    {
+        "name": "Coq au Vin Meatballs",
+        "category": "french"
+    },
+    {
+        "name": "Creamy Cacio e Pepe Orzo",
+        "category": "italian"
+    },
+    {
+        "name": "Creamy Cajun Shrimp Pasta",
+        "category": "american"
+    },
+    {
+        "name": "Creamy Garlic Parm Tortellini",
+        "category": "italian"
+    },
+    {
+        "name": "Creamy Mustard Shallot Chicken",
+        "category": "french"
+    },
+    {
+        "name": "Ground Turkey Sweet Potato",
+        "category": "american"
+    },
+    {
+        "name": "Honey Sriracha Glazed Meatballs",
+        "category": "asian"
+    },
+    {
+        "name": "Lemon Terragon Shrimp Scampi",
+        "category": "american"
+    },
+    {
+        "name": "Nashville Hot Chicken Milanese",
+        "category": "american"
+    },
+    {
+        "name": "Peanut Butter Stirfry",
+        "category": "asian"
+    },
+    {
+        "name": "Peruvian Chicken",
+        "category": "mexican"
+    },
+    {
+        "name": "Potato Tarte Tatin",
+        "category": "french"
+    },
+    {
+        "name": "Spicy Shrimp and White Beans",
+        "category": "american"
+    },
+    {
+        "name": "Sheetpan Balsamic Chicken",
+        "category": "american"
+    },
+    {
+        "name": "Lunch - Turkey and Rice Skillet",
+        "category": "american"
+    },
+    {
+        "name": "Yogurt Marinated Chicken Thighs",
+        "category": "mediterranean"
     }
 ]
