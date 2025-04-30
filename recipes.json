@@ -258,5 +258,13 @@
     {
         "name": "Creamy Jalapeno Lime Chicken",
         "category": "mexican"
+    },
+    {
+        "name": "Cider Vinegar Chicken Thighs",
+        "category": "american"
+    },
+    {
+        "name": "Ramen Noodle Salad",
+        "category": "asian"
     }
 ]
