@@ -254,5 +254,9 @@
     {
         "name": "Yogurt Marinated Chicken Thighs",
         "category": "mediterranean"
+    },
+    {
+        "name": "Creamy Jalapeno Lime Chicken",
+        "category": "mexican"
     }
 ]
